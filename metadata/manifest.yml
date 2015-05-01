@@ -1,11 +1,12 @@
 ---
 Name: nodejs
 Cartridge-Short-Name: NODEJS
-Display-Name: Node.js 0.10
+Display-Name: Node.js 0.10 WEB+TCP
 Description: Node.js is a platform built on Chrome's JavaScript runtime for easily
   building fast, scalable network applications. Node.js is perfect for data-intensive
   real-time applications that run across distributed devices.
 Version: '0.10'
+Source-Url: https://github.com/mikhail-guru/openshift-origin-cartridge-nodejs/archive/master.zip
 Versions:
 - '0.10'
 - '0.6'
@@ -22,7 +23,7 @@ Compatible-Versions:
 - 0.0.20
 - 0.0.21
 - 0.0.22
-Cartridge-Vendor: redhat
+Cartridge-Vendor: mikhailguru
 Categories:
 - service
 - javascript
@@ -68,6 +69,11 @@ Endpoints:
     Backend: ''
     Options:
       health: true
+- Private-IP-Name:   IP
+  Private-Port-Name: PORT_TCP
+  Private-Port:      8090
+  Public-Port-Name:  PROXY_PORT_TCP
+  Options:           { "ssl_to_gear": true }
 Install-Build-Required: false
 Version-Overrides:
   '0.6':
